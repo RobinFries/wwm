@@ -19,6 +19,7 @@ Ziel könnten sein:
   -  Dateistruktur in den Griff bekommen
   -  Vollbildmodus
   -  Umbau auf CustomTKinter
+  -  Soweit anpassen, dass eine .exe erstellt werden kann
 
 Ich glaub aber, dass ich nicht weiter mache, da die Aufgabenstellung mit der Version 100% erfüllt ist. Wer ein gutes WWM haben will, da gibts auf Git ein gutes Repo mit vernünfiter Datenbankverbindung.
 
