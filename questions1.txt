@@ -1,0 +1,7 @@
+[
+    {"question": "Ab wann darf man einen ITler ansprechen?", "options": ["Beim Eintreffen des Gebäudes", "Nach dem Anstempeln", "Nach dem ersten Kaffee", "Wärend er auf allen Kanälen auf 'Bitte nicht Stören' steht"], "correct_answer": "Nach dem ersten Kaffee"},
+    {"question": "Was ist ein Sicheres Passwort?", "options": ["**********", "12346", "Passwort", "KevinMueller1987"], "correct_answer": "**********"},
+    {"question": "Woher kommt der Begriff Bug?", "options": ["Ein echter Käfer auf der Platine", "Der erste Trojaner", "Der erste Nerd war ein Wickinger", "Nicht diese Antwortmöglichkeit!"], "correct_answer": "Ein echter Käfer auf der Platine"},
+    {"question": "Wer entwickelte die erste Comuptermaus?", "options": ["Bill Gates", "Steve Jobs", "Doug Engelbart", "Sylvester Stallone"], "correct_answer": "Doug Engelbart"},
+    {"question": "Wie viele Viren werden Monatlich entwickelt?", "options": ["ca. 1.000.000", "ca. 2.500.000", "genau 4.000", "ca. 5.000"], "correct_answer": "ca. 5.000"}
+]

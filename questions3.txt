@@ -1,0 +1,7 @@
+[
+    {"question": "Wann ist der beste Zeitpunkt, um ein Softwareupdate zu installieren?", "options": ["Sofort, ohne zu zögern", "Während der Mittagspause", "Nach Feierabend", "Wenn der Vollmond am Himmel steht"], "correct_answer": "Nach Feierabend"},
+    {"question": "Was ist der bevorzugte Treffpunkt von Programmierern?", "options": ["Café", "Bibliothek", "Serverraum", "Fitnessstudio"], "correct_answer": "Serverraum"},
+    {"question": "Wie behebt man einen Computerfehler?", "options": ["Durch kräftiges Klopfen auf den Bildschirm", "Durch einen Neustart", "Durch das Lesen einer Bedienungsanleitung", "Durch Opfern einer Tasse Kaffee"], "correct_answer": "Durch einen Neustart"},
+    {"question": "Warum verwenden Programmierer schwarze Bildschirmhintergründe?", "options": ["Für einen minimalistischen Look", "Um Strom zu sparen", "Um sich besser auf den Code zu konzentrieren", "Weil es cooler aussieht"], "correct_answer": "Um sich besser auf den Code zu konzentrieren"},
+    {"question": "Was ist die Lieblingsspeise eines Computers?", "options": ["Datenbananen", "Bit-Burger", "Algorithmen-Nudeln", "Mikrochip-Cookies"], "correct_answer": "Mikrochip-Cookies"}
+]

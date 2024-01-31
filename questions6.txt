@@ -1,0 +1,7 @@
+[
+    {"question": "Was sagt ein Debugger, bevor er in den Ruhestand geht?", "options": ["Ich gehe in den Sourcecode", "Ich werde zum Bitpensionär", "Auf Wiedersehen, Hex-Ära", "Mach's gut, Breakpoint"], "correct_answer": "Mach's gut, Breakpoint"},
+    {"question": "Warum gehen Programmierer selten schwimmen?", "options": ["Wasserscheu", "Fürchten sich vor Wasserfallmodellen", "Weil sie ihre Schwimmer immer verlieren", "Weil sie nicht mit Fischen sprechen können"], "correct_answer": "Weil sie ihre Schwimmer immer verlieren"},
+    {"question": "Welche Sprache spricht ein Computer am besten?", "options": ["Binary", "Java", "C++", "HTML"], "correct_answer": "Binary"},
+    {"question": "Wie nennt man einen Hacker im Urlaub?", "options": ["Sonnenbrillen-Scripter", "Beach-Breaker", "Shell am Strand", "Entspannte Malware"], "correct_answer": "Shell am Strand"},
+    {"question": "Welche Musik hören IT-Experten am liebsten?", "options": ["Algorhythmus & Blues", "Binary Beats", "Code-Rock", "Firewall-Folk"], "correct_answer": "Code-Rock"}
+]

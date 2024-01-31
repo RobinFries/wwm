@@ -1,0 +1,7 @@
+[
+    {"question": "Wie nennt man einen Gruppenchat von Programmierern?", "options": ["Code-Party", "Bit-Bande", "Syntax-Zirkel", "Algorithmus-Klub"], "correct_answer": "Syntax-Zirkel"},
+    {"question": "Was tut ein Netzwerkadministrator, wenn er gestresst ist?", "options": ["Entspannungstechniken", "Einen Spaziergang machen", "Ping gegen die Wand", "Den Router neu starten"], "correct_answer": "Ping gegen die Wand"},
+    {"question": "Welche Programmiersprache liebt das Wetter?", "options": ["Perl", "C#", "Java", "Python"], "correct_answer": "Perl"},
+    {"question": "Warum werden Computer so selten krank?", "options": ["Sie haben eine starke Firewall", "Regelmäßige Anti-Virus-Scans", "Sie haben keine Viren", "Sie nehmen täglich einen Byte Vitamine"], "correct_answer": "Sie haben keine Viren"},
+    {"question": "Was ist das Lieblingsgetränk eines IT-Profis?", "options": ["Kaffee", "Energy-Drink", "Mate-Tee", "Debugging-Saft"], "correct_answer": "Mate-Tee"}
+]

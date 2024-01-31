@@ -1,0 +1,7 @@
+[
+    {"question": "Welche Programmiersprache wird oft als 'Hello World'-Programm verwendet?", "options": ["Java", "Python", "C++", "Esperanto"], "correct_answer": "Python"},
+    {"question": "Was ist die Hauptnahrung von Servern?", "options": ["Binärcode", "Elektrizität", "Datenpakete", "Pizza"], "correct_answer": "Elektrizität"},
+    {"question": "Warum tragen Programmierer oft Kapuzenpullover?", "options": ["Mode-Statement", "Um sich vor Kälte zu schützen", "Um ihre Gedanken zu verbergen", "Weil es im Jobangebot stand"], "correct_answer": "Um ihre Gedanken zu verbergen"},
+    {"question": "Welche Tastenkombination rettet oft vor einem katastrophalen Fehler?", "options": ["Ctrl + S", "Alt + F4", "Shift + Delete", "Fn + Esc"], "correct_answer": "Ctrl + S"},
+    {"question": "Was ist der Lieblingsfilm eines Computers?", "options": ["The Matrix", "Inception", "Tron", "Der Marsianer"], "correct_answer": "The Matrix"}
+]

@@ -3,20 +3,21 @@ from tkinter import PhotoImage
 from tkinter import *
 import time
 import random
+import json
 
-app = tk.Tk()
+#app = tk.Tk()
 #app.iconbitmap("C:\Program Files (x86)\WWM by Cybermember\_bg\wwm.ico")
 
 root = Tk()
+root.iconbitmap("wwm.ico")
 root.geometry("1600x800")
 root.title("Wer wird Millionär Quiz")
-modus_auswahl_image = PhotoImage(file= "C:\Program Files (x86)\WWM by Cybermember\_bg\_modusauswahl.png")
-game_bg = PhotoImage(file="C:\Program Files (x86)\WWM by Cybermember\_bg\_gamebg.png")
-default_bg = PhotoImage(file="C:\Program Files (x86)\WWM by Cybermember\_bg\_backgroundimage.png")
-gewonnen_bg = PhotoImage(file="C:\Program Files (x86)\WWM by Cybermember\_bg\_gewonnen.png")
-verloren_bg = PhotoImage(file="C:\Program Files (x86)\WWM by Cybermember\_bg\_verloren.png")
-verloren_safe_bg = PhotoImage(file="C:\Program Files (x86)\WWM by Cybermember\_bg\_verlorensafe.png")
-tk.Label(root, image=modus_auswahl_image).place(relwidth=1, relheight=1)
+modus_auswahl_image = PhotoImage(file="modusauswahl.png")
+game_bg = PhotoImage(file="gamebg.png")
+default_bg = PhotoImage(file="backgroundimage.png")
+gewonnen_bg = PhotoImage(file="gewonnen.png")
+verloren_bg = PhotoImage(file="verloren.png")
+verloren_safe_bg = PhotoImage(file="verlorensafe.png")
 
 konto = 0
 frage = 1
@@ -25,31 +26,52 @@ joker2 = False
 saveMoney = False
 verloren = False
 konto_array = [100, 200, 300, 500, 1000]
-
-questions = [
-{"question": "Ab wann darf man einen ITler ansprechen?", "options": ["Beim Eintreffen des Gebäudes", "Nach dem Anstempeln", "Nach dem ersten Kaffee", "Wärend er auf allen Kanälen auf 'Bitte nicht Stören' steht"], "correct_answer": "Nach dem ersten Kaffee"},
-{"question": "Was ist ein Sicheres Passwort?", "options": ["**********", "12346", "Passwort", "KevinMueller1987"], "correct_answer": "**********"},
-{"question": "Woher kommt der Begriff Bug?", "options": ["Ein echter Käfen auf der Platine", "Der erste Trojaner", "Der erste Nerd war ein Wickinger", "Nicht diese Antwortmöglichkeit!"], "correct_answer": "Ein echter Käfen auf der Platine"},
-{"question": "Wer entwickelte die erste Comuptermaus?", "options": ["Bill Gates", "Steve Jobs", "Doug Engelbart", "Sylvester Stallone"], "correct_answer": "Doug Engelbart"},
-{"question": "Wie viele Viren werden Monatlich entwickelt?", "options": ["ca. 1.000.000", "ca. 2.500.000", "genau 4.000", "ca. 5.000"], "correct_answer": "ca. 5.000"}
-]
-
 antwort1_btn = Button()
 antwort2_btn = Button()
 antwort3_btn = Button()
 antwort4_btn = Button()
 joker1_btn = Button()
 joker2_btn = Button()
+questions = []
 
-btn1 = Button(root, text="Zocker", width=15, height= 2, command=lambda: Click("Zocker"), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 16, "bold"))
-btn2 = Button(root, text="Sicherheit", width=15, height= 2, command=lambda: Click("Sicherheit"), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 16, "bold"))
-btn1.pack(side="left", padx=290, anchor=N, pady=320)
-btn2.pack(side="right", padx=290, anchor=N, pady=320)        
+def load_frage():
+    global questions
+    fri = random.randint(1, 6)
+
+    print(str(fri))
+
+    file_path = 'questions' + str(fri) + '.txt'
+
+    print(file_path)
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        
+        file_content = file.read()
+
+    questions = json.loads(file_content)
+
+
+def build_modus():
+    
+    load_frage()
+    
+    for widget in root.grid_slaves():
+        widget.grid_forget()
+    
+    tk.Label(root, image=modus_auswahl_image).place(relwidth=1, relheight=1) 
+    btn1 = Button(root, text="Zocker", width=15, height= 2, command=lambda: Click("Zocker"), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 16, "bold"))
+    btn2 = Button(root, text="Sicherheit", width=15, height= 2, command=lambda: Click("Sicherheit"), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 16, "bold"))
+    btn1.grid(row=1, column=0, padx=290, pady=320)
+    btn2.grid(row=1, column=1, padx=320, pady=320)        
 
 def Click(modus):
     global joker1
     global joker2
-    global saveMoney  
+    global saveMoney 
+    global konto
+    global frage
+    global verloren
+     
     if modus == "Zocker":
         joker1 = True
         joker2 = True
@@ -57,8 +79,12 @@ def Click(modus):
         
     if modus == "Sicherheit":
         joker1 = True
+        joker2 = False
         saveMoney = True
 
+    konto = 0
+    frage = 1
+    verloren = False
     widget_clear()
     root.update_idletasks()
     root.after(800, build_game)
@@ -67,17 +93,24 @@ def widget_clear():
     global frage
     global verloren
     global saveMoney
-    
+    restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
+
     for widget in root.winfo_children():
         widget.destroy()
 
     if frage == 5:
         tk.Label(root, image=gewonnen_bg).place(relwidth=1, relheight=1)
+        restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
+        restart_btn.grid(row=1, column=0, sticky="s", pady=450, padx=470)
     elif verloren == True:
         if saveMoney == True:
             tk.Label(root, image=verloren_safe_bg).place(relwidth=1, relheight=1)
+            restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
+            restart_btn.grid(row=1, column=0,sticky="s", pady=450, padx=470)
         else:
             tk.Label(root, image=verloren_bg).place(relwidth=1, relheight=1)
+            restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
+            restart_btn.grid(row=1, column=0, sticky="s", pady=450, padx=470)
     else:
         tk.Label(root, image=default_bg).place(relwidth=1, relheight=1)
 
@@ -90,10 +123,6 @@ def build_game():
     kontostand = "Kontostand: " + str(konto) + " €"
     konto_lb = Label(root, text=kontostand, width=15, height=3, bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"), padx=3)
     konto_lb.grid(row=0, column=0, pady=(42,0), sticky="w", padx=(60,9))
-
-    #joker = "Joker: " + str(jokerCount)
-    #joker_lb = Label(root, text=joker, width=15, height=3, bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
-    #joker_lb.grid(row=1, column=0, sticky="w", padx=(60, 0))
 
     joker1_btn = Button(root, text="Joker 1 einsetzen", width=15, height=3, bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"), command=lambda: (Joker(1), joker1_btn.config(state="disabled"), joker2_btn.config(state="disabled")))
     joker1_btn.grid(row=2, column=0, sticky="w", padx=(60, 0))
@@ -399,8 +428,6 @@ def Joker(i):
 
     #else:
      #   print("Error")
-
-
-    
-
+   
+build_modus()
 root.mainloop()

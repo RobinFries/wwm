@@ -1,0 +1,7 @@
+[
+    {"question": "Aus was besteht eine IP?", "options": ["1 Oktett", "2 Oktett", "3 Oktett", "4 Oktett"], "correct_answer": "4 Oktett"},
+    {"question": "Was ist ein dezentrales Netzwerk?", "options": ["2m neben der Zentrale", "Auf unterschiedliche Orte aufgeteilt", "Ein schönes Gehäuse", "Ein Netzwerk ohne Strom"], "correct_answer": "Auf unterschiedliche Orte aufgeteilt"},
+    {"question": "Wie nennt man ein Feindliches eindringen in ein Netzwerk?", "options": ["Feindliche Übernahme", "Injection", "nervige Anfrage", "DDOS"], "correct_answer": "Injection"},
+    {"question": "Wer machte die Computermaus Marktfähig?", "options": ["Bill Gates", "Steve Jobs", "Doug Engelbart", "Sylvester Stallone"], "correct_answer": "Steve Jobs"},
+    {"question": "Wie goß ist Google?", "options": ["3 Geld", "ca. 100.000 Petabytes", "10 Matratzen", "ca. w Exabytes"], "correct_answer": "ca. 100.000 Petabytes"}
+]
