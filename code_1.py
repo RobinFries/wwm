@@ -5,9 +5,6 @@ import time
 import random
 import json
 
-#app = tk.Tk()
-#app.iconbitmap("C:\Program Files (x86)\WWM by Cybermember\_bg\wwm.ico")
-
 root = Tk()
 root.iconbitmap("wwm.ico")
 root.geometry("1600x800")
@@ -37,12 +34,7 @@ questions = []
 def load_frage():
     global questions
     fri = random.randint(1, 6)
-
-    print(str(fri))
-
     file_path = 'questions' + str(fri) + '.txt'
-
-    print(file_path)
 
     with open(file_path, 'r', encoding='utf-8') as file:
         
@@ -98,12 +90,8 @@ def widget_clear():
     for widget in root.winfo_children():
         widget.destroy()
 
-    if frage == 5:
-        tk.Label(root, image=gewonnen_bg).place(relwidth=1, relheight=1)
-        restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
-        restart_btn.grid(row=1, column=0, sticky="s", pady=450, padx=470)
-    elif verloren == True:
-        if saveMoney == True:
+    if verloren == True:
+        if (saveMoney == True) and (frage > 3):
             tk.Label(root, image=verloren_safe_bg).place(relwidth=1, relheight=1)
             restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
             restart_btn.grid(row=1, column=0,sticky="s", pady=450, padx=470)
@@ -111,6 +99,12 @@ def widget_clear():
             tk.Label(root, image=verloren_bg).place(relwidth=1, relheight=1)
             restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
             restart_btn.grid(row=1, column=0, sticky="s", pady=450, padx=470)
+
+    elif frage == 5:
+        tk.Label(root, image=gewonnen_bg).place(relwidth=1, relheight=1)
+        restart_btn = Button(root, text="Neustarten", width=60, height=3, command=lambda: (restart_btn.configure(state="disable"),  root.after(800, build_modus)), bg="#3f0961", fg="white", bd=2, relief=tk.SOLID, font=("Helvetica", 12, "bold"))
+        restart_btn.grid(row=1, column=0, sticky="s", pady=450, padx=470)
+
     else:
         tk.Label(root, image=default_bg).place(relwidth=1, relheight=1)
 
