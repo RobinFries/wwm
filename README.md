@@ -24,5 +24,3 @@ Ziel könnten sein:
 Ich glaub aber, dass ich nicht weiter mache, da die Aufgabenstellung mit der Version 100% erfüllt ist. Wer ein gutes WWM haben will, da gibts auf Git ein gutes Repo mit vernünfiter Datenbankverbindung.
 
 Sollte sich eine arme Seele dieses Repo antun, ist das mindeste, was ich machen kann, alles frei zu Verfügung zu stellen. Have fun and God bless you.
-
-Cyber
